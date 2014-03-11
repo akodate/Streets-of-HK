@@ -9,4 +9,10 @@ class SiteController < ApplicationController
   def terms
   end
 
+  def login
+  end
+
+  def register
+  end
+
 end

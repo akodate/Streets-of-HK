@@ -20,23 +20,32 @@ body {
   height: 100%;
 }
 
+legend {
+  font: 2.8em 'Hammersmith One', Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: rgba(200, 200, 200, 1);
+}
+
+.btn-default {
+  font: 2em 'Hammersmith One', Arial, Helvetica, sans-serif;
+  color: rgba(200, 200, 200, 1);
+  background-color: rgba(200, 200, 200, 0);
+  border-width: .1em;
+  font-style: italic;
+  margin-top: .3em;
+}
+
 .navbar-fixed-top {
   min-height: 4em;
 }
 
 .form-group {
-  margin-bottom: 0px;
+  margin: 10px 0px;
 }
 
 #login-form {
   min-width: 54em;
   margin-top: 6em;
-}
-
-#search-legend {
-  font: 2.2em 'Hammersmith One', Arial, Helvetica, sans-serif;
-  font-style: italic;
-  color: rgba(200, 200, 200, 1);
 }
 
 .navbar-brand {
@@ -47,6 +56,13 @@ body {
 .navbar-link {
   padding-right: .6em;
   font: 1.5em 'Hammersmith One', Arial, Helvetica, sans-serif;
+}
+
+#user-email, #user-password {
+  min-height: 2em;
+  min-width: 20em;
+  font: 1.8em Arial, Helvetica, sans-serif;
+  font-style: italic;
 }
 
 #login-form {
