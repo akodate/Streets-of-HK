@@ -13,40 +13,50 @@
  */
 
 body {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 4.3em;
+  padding-bottom: 4.3em;
   background-image: url('street.jpg');
   background-size: cover;
   height: 100%;
 }
 
+.navbar-fixed-top {
+  min-height: 4em;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
 #login-form {
-  min-height: 200px;
-  min-width: 600px;
+  min-width: 54em;
+  margin-top: 6em;
 }
 
 #search-legend {
-  font: 36px 'Hammersmith One', Arial, Helvetica, sans-serif;
+  font: 2.2em 'Hammersmith One', Arial, Helvetica, sans-serif;
   font-style: italic;
   color: rgba(200, 200, 200, 1);
 }
 
 .navbar-brand {
-  font-size: 24px;
+  padding-top: .3em;
+  font: 2em 'Hammersmith One', Arial, Helvetica, sans-serif;
 }
 
-.container {
-
+.navbar-link {
+  padding-right: .6em;
+  font: 1.5em 'Hammersmith One', Arial, Helvetica, sans-serif;
 }
 
 #login-form {
-  padding: 30px;
+  padding: 2em;
   background: rgba(0, 0, 0, .5);
 }
 
 #search {
-  min-height: 40px;
-  min-width: 500px;
-  font: 16px Arial, Helvetica, sans-serif;
+  min-height: 2em;
+  min-width: 20em;
+  font: 2.5em Arial, Helvetica, sans-serif;
   font-style: italic;
 }
