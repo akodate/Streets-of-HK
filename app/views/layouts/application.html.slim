@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Streets of Hong Kong
+    = stylesheet_link_tag "bootstrap.min", media: "all"
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  body
+    header role="banner"
+      nav.navbar.navbar-inverse.navbar-default.navbar-fixed-top role="navigation"
+        .container-fluid
+          .navbar-header
+            a.navbar-brand href="/"  Streets of Hong Kong
+          p.navbar-text.navbar-right
+            | Signed in as
+            a.navbar-link href="#"  USER
+
+    ==yield
+
+    footer
+      nav.navbar.navbar-inverse.navbar-default.navbar-fixed-bottom role="navigation"
+        .container-fluid
+          ul.nav.navbar-nav
+            li
+              a href="/privacy"  Privacy Policy
+            li
+              a href="/terms"  Terms of Use
+            p.navbar-text.navbar-right &copy;Streets of Hong Kong

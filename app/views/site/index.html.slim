@@ -1,0 +1,15 @@
+main.container role="main"
+      .row
+        .col-md-6.col-md-offset-3
+          form#login-form accept-charset="UTF-8" action="#" method="post"
+            fieldset
+              legend Please sign in
+              .form-group
+                label.sr-only for="user-email"  Email
+                input#user-email name="user[email]" placeholder="Email Address" type="text"
+              .form-group
+                label.sr-only for="user-password"  Password
+                input#user-password name="user[password]" placeholder="Password" type="password"
+              .form-group
+                input.btn.btn-success type="submit" value="Sign In"
+                  button#register.btn.btn-primary type="button" value="Register"  Register
