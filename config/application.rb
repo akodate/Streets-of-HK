@@ -14,8 +14,6 @@ Bundler.require(:default, Rails.env)
 module StreetsOfHk
   class Application < Rails::Application
 
-    config.secret_key_base = 'zelikazi'
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
