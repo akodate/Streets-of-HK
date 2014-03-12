@@ -6,3 +6,7 @@ main.container role="main"
           .form-group
             label.sr-only for="search"  Street search
             input#search name="search" placeholder="What street?" type="text"
+
+            ul
+              li = @users[0].email
+              li = @users[1].email
