@@ -8,5 +8,8 @@
 
 User.destroy_all
 
-User.create(email: 'anil@ga.co')
-User.create(email: 'charles@munat.com')
+User.create([
+ { email: "anil@ga.co"},
+ { email: "charles@munat.com"},
+ { email: "harry@ga.co"}
+ ])

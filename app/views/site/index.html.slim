@@ -8,5 +8,4 @@ main.container role="main"
             input#search name="search" placeholder="What street?" type="text"
 
             ul
-              li = @users[0].email
-              li = @users[1].email
+              li = "Welcome, #{@current_user.email}"

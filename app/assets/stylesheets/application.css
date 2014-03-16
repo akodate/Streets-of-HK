@@ -76,3 +76,8 @@ legend {
   font: 2.5em Arial, Helvetica, sans-serif;
   font-style: italic;
 }
+
+.noty_text {
+  font-size : 18px;
+  font-weight: normal;
+}
