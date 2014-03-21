@@ -81,3 +81,7 @@ legend {
   font-size : 18px;
   font-weight: normal;
 }
+
+.logout-link {
+  margin-top: 8px;
+}

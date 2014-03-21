@@ -11,6 +11,10 @@ StreetsOfHk::Application.routes.draw do
   post 'login' => 'session#create'
   delete 'logout' => 'session#destroy'
 
-  get 'logout' => 'session#destroy' #TODO: remove before deployment
+  # get 'logout' => 'session#destroy' #TODO: remove before deployment
+
+  get 'reset/:code' => 'password#edit', as: :reset
+  put 'reset/:code' => 'password#update'
+  patch 'reset/:code' => 'password#update'
 
 end
