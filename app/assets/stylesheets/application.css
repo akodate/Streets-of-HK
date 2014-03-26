@@ -23,7 +23,8 @@ body {
 legend {
   font: 2.8em 'Hammersmith One', Arial, Helvetica, sans-serif;
   font-style: italic;
-  color: rgba(200, 200, 200, 1);
+  color: rgba(50, 50, 50, 1);
+  border-bottom:3px solid gray;
 }
 
 .btn-default {
@@ -68,6 +69,13 @@ legend {
 #login-form {
   padding: 2em;
   background: rgba(0, 0, 0, .5);
+}
+
+#login-div {
+  min-width: 40em;
+  margin-top: 3em;
+  padding: 1em 5em;
+
 }
 
 #search {

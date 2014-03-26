@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
 
-# before_action :is_authenticated?
+  # before_action :is_authenticated?
 
   def index
     # render json: User.all.entries
@@ -11,12 +11,6 @@ class SiteController < ApplicationController
   end
 
   def terms
-  end
-
-  def login
-  end
-
-  def register
   end
 
 end

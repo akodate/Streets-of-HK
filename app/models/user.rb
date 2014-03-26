@@ -3,14 +3,16 @@ require 'bcrypt'
 PASSWORD_RESET_EXPIRES = 4
 
 class User
+
   include Mongoid::Document
   include Mongoid::Timestamps
 
   attr_accessor :password, :password_confirmation
 
+
   field :email, type: String
-  field :ganen, type: String
-  field :mebaru, type: String
+  field :salt, type: String
+  field :fish, type: String
   field :code, type: String
   field :expires_at, type: Time
 
@@ -18,16 +20,22 @@ class User
   validates :email, presence: true, uniqueness: {case_sensitive: false}
   validates :password, confirmation: true
 
-  before_save :encrypt_password
-
-  def self.authenticate(email, password)
+  def self.authenticate email, password
     user = User.find_by email: email
     user if user and user.authenticate(password)
   end
 
-  def authenticate(password)
-    self.mebaru == BCrypt::Engine.hash_secret(password, self.ganen)
+  def self.find_by_code code
+    if user = User.find_by({:code => code, :expires_at => {"$gte" => Time.now.gmtime}})
+      user.set_expiration
+    end
+    user
   end
+
+  def authenticate password
+    self.fish == BCrypt::Engine.hash_secret(password, self.salt)
+  end
+
 
   def set_password_reset
     self.code = SecureRandom.urlsafe_base64
@@ -36,23 +44,34 @@ class User
 
   def set_expiration
     self.expires_at = PASSWORD_RESET_EXPIRES.hours.from_now
-    self.save!
+    self.save
+  end
+
+  def reset_password(params)
+    if params[:password].blank?
+      self.errors.add(:password, "can't be blank")
+      false
+    else
+      if self.update_attributes(params)
+        self.update_attributes(params.merge( code: nil, expires_at: nil ))
+      end
+    end
   end
 
   protected
 
-  def set_random_password
-    if self.mebaru.blank? and password.blank?
-      self.ganen = BCrypt::Engine.generate_salt
-      self.mebaru = BCrypt::Engine.hash_secret(SecureRandom.base64(32), self.ganen)
+    def set_random_password
+      if self.fish.blank? and password.blank?
+        self.salt = BCrypt::Engine.generate_salt
+        self.fish = BCrypt::Engine.hash_secret(SecureRandom.base64(32), self.salt)
+      end
     end
-  end
 
-  def encrypt_password
-    if password.present?
-      self.ganen = BCrypt::Engine.generate_salt
-      self.mebaru = BCrypt::Engine.hash_secret(password, self.ganen)
+    def encrypt_password
+      if password.present?
+        self.salt = BCrypt::Engine.generate_salt
+        self.fish = BCrypt::Engine.hash_secret(password, self.salt)
+      end
     end
-  end
 
 end
