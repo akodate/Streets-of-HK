@@ -24,10 +24,10 @@ class RegisterController < ApplicationController
   end
 
   def confirm
-    @user = User.find_by_code( params[:code] )
+    @user = User.confirm_user(params)
     if log_user_in( @user, REGISTERED )
       return
-      # redirect_to( root_url, notice: PASSWORD_RESET ) and return
+      # redirect_to( root_url, notice: REGISTERED ) and return
     else
       flash.now[:alert] = @user.errors
     end

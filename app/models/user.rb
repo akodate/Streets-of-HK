@@ -32,6 +32,12 @@ class User
     user
   end
 
+  def self.confirm_user(params)
+    user = User.find_by({:code => params[:code]})
+    user.reset_password(params)
+    return user
+  end
+
   def authenticate password
     self.fish == BCrypt::Engine.hash_secret(password, self.salt)
   end
