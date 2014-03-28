@@ -2,7 +2,8 @@ StreetsOfHk::Application.routes.draw do
 
   root 'site#index'
 
-  get 'register' => 'site#register'
+  get 'register' => 'register#new'
+  post 'register' => 'register#create'
 
   get 'login' => 'session#new'
   post 'login' => 'session#create'
@@ -16,5 +17,7 @@ StreetsOfHk::Application.routes.draw do
   get 'reset/:code' => 'password#edit', as: :reset
   put 'reset/:code' => 'password#update'
   patch 'reset/:code' => 'password#update'
+
+  get 'register/:code' => 'register#confirm', as: :confirmation
 
 end

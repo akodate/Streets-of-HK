@@ -1,6 +1,7 @@
-We received a request to reset your Streets of HK credentials. To do so, please follow the coded link below:
+Thank you for registering at Streets of HK!
+Please follow the coded link below to confirm your registration.
 
-<%= reset_url(@user.code) %>
+<%= confirmation_url(@user.code) %>
 
 If you received this email in error, simply do nothing. The above link will expire at
 <%= @user.expires_at.strftime("%-I:%M on %a, %-d %b %Y") %>

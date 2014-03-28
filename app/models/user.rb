@@ -1,6 +1,6 @@
 require 'bcrypt'
 
-PASSWORD_RESET_EXPIRES = 4
+PASSWORD_RESET_EXPIRES = 15
 
 class User
 
@@ -43,7 +43,7 @@ class User
   end
 
   def set_expiration
-    self.expires_at = PASSWORD_RESET_EXPIRES.hours.from_now
+    self.expires_at = PASSWORD_RESET_EXPIRES.minutes.from_now
     self.save
   end
 
