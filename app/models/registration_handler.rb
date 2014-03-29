@@ -14,7 +14,6 @@ class RegistrationHandler
       password: params[:user][:password]
     )
     if @user.set_password_reset
-      puts "#{@user}" + "THIS IS THE USER IT'S VALID"
       send_register_email
     else
       @flash.now[:alert] = NO_SAVE
@@ -22,7 +21,6 @@ class RegistrationHandler
   end
 
   def send_register_email
-    puts "#{@user}" + "IS THE USER STILL HERE?"
     begin
       RegisterNotifier.register(@user).deliver
       @flash.now[:notice] = SUCCESS
