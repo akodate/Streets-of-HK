@@ -34,8 +34,14 @@ class User
 
   def self.confirm_user(params)
     user = User.find_by({:code => params[:code]})
-    user.reset_password(params)
+    # user.update_attributes(params.merge( code: nil, expires_at: nil ))
+    # user.pry
     return user
+  end
+
+  def update_expiration
+    self.update_attributes( code: nil, expires_at: nil )
+    self.pry
   end
 
   def authenticate password

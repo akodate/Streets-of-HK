@@ -25,6 +25,7 @@ class RegisterController < ApplicationController
 
   def confirm
     @user = User.confirm_user(params)
+    @user.update_password
     if log_user_in( @user, REGISTERED )
       return
       # redirect_to( root_url, notice: REGISTERED ) and return
