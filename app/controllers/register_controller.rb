@@ -4,6 +4,7 @@ class RegisterController < ApplicationController
   NO_MATCH = "Passwords do not match"
   USER_EXISTS = "That e-mail is already taken. Please choose another one"
   REGISTERED = "You're now registered and logged in!"
+  LINK_EXPIRED = "Link expired. Please register again."
 
   def new
 
@@ -24,13 +25,16 @@ class RegisterController < ApplicationController
   end
 
   def confirm
-    @user = User.confirm_user(params)
-    @user.update_password
+    if @user = User.find_by_code(params[:code])
+      @user.clear_expiration
+    else
+      redirect_to register_url, notice: LINK_EXPIRED
+    end
     if log_user_in( @user, REGISTERED )
       return
       # redirect_to( root_url, notice: REGISTERED ) and return
-    else
-      flash.now[:alert] = @user.errors
+    # else
+    #   flash.now[:alert] = @user.errors
     end
   end
 
