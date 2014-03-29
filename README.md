@@ -4,8 +4,8 @@ Streets-of-HK
 TODO:
 
 - ~~Make "Log Out" button conform with rest of header styling~~
-- Add "logged in as" to header navbar
-- Import streets data file
+- ~~Add "logged in as" to header navbar~~
+- ~~Import streets data file~~
 - Get search working
 - Add login flash
 - Move flashes to bottom of screen
@@ -16,7 +16,7 @@ TODO:
 - ~~Make expiration function properly~~
 - Unify register views/routes (solve missing template error)
 - Add admin functionality
-- Add scraper?
+- ~~Add scraper?~~
 - Street not found special result
 
 QUESTIONS:
