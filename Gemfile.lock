@@ -222,6 +222,7 @@ DEPENDENCIES
   launchy
   letter_opener
   mongoid!
+  nokogiri
   pry
   rails (= 4.0.3)
   rb-fsevent
