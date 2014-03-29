@@ -1,6 +1,6 @@
 require 'bcrypt'
 
-PASSWORD_RESET_EXPIRES = 0.1
+PASSWORD_RESET_EXPIRES = 15
 
 class User
 
@@ -27,19 +27,12 @@ class User
 
   def self.find_by_code code
     if user = User.find_by({:code => code, :expires_at => {"$gte" => Time.now.gmtime}})
-      user.set_expiration
+      user.clear_expiration
     else
       User.find_by({:code => code}).destroy
     end
     user
   end
-
-  # def self.confirm_user(params)
-  #   user = User.find_by({:code => params[:code]})
-  #   # user.update_attributes(params.merge( code: nil, expires_at: nil ))
-  #   # user.pry
-  #   return user
-  # end
 
   def clear_expiration
     self.update_attributes( code: nil, expires_at: nil )

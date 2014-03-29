@@ -6,13 +6,3 @@ main.container role="main"
           .form-group
             label.sr-only for="search"  Street search
             input#search name="search" placeholder="What street?" type="text"
-
-/ = "Welcome, #{@current_user.email}"
-
-/ p
-/   | Hi there (form code here)
-
-/ ol
-/   - @users.each do |some_user|
-/     li
-/       = some_user.email
