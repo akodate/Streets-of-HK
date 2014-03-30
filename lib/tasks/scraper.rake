@@ -33,11 +33,11 @@ namespace :scraper do
       puts list.css('h3').text
       puts list.css('dl').text
 
-      count = -1
+      # count = -1
       list.css('ul li a').each do |a|
-        count += 1
-        if a['href'] =~ WIKI_URL_REGEX && count % 12 == 0
-          puts count
+        # count += 1
+        if a['href'] =~ WIKI_URL_REGEX # && count % 12 == 0
+          # puts count
 
           remote_url = BASE_WIKIPEDIA_URL + a['href']
           puts "Fetching #{remote_url}"
