@@ -9,6 +9,7 @@ TODO:
 - Get search working
 - Add login flash
 - Move flashes to bottom of screen
+- Clean up privacy and terms pages
 - Red flashes for negative notifications
 - Deploy application
 - Verify mobile functionality

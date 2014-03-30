@@ -34,8 +34,7 @@ html
             li
               = link_to "Terms of Use", terms_url
             p.navbar-text.navbar-right
-              | Signed in as
-              = " " + current_user.email
+              = "Signed in as " + current_user.email if current_user
             p.navbar-text.navbar-right &copy;Streets of Hong Kong
     == flash_noty_script_tag
           / p.navbar-text.navbar-right
