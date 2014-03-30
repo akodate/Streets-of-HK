@@ -9,13 +9,18 @@ class SiteController < ApplicationController
 
   def search
     if params[:term]
-      @result = StreetData.look_up(params[:term])
+      result = StreetData.look_up(params[:term])
     else
-      @result = StreetData.look_up(params[:search][:term])
+      result = StreetData.look_up(params[:search][:term])
     end
 
-    session[:result] = @result.map{ |i| i.keys[0] }
-    render :index
+    if result.size == 1
+      session[:result] = result
+      redirect_to display_url
+    else
+      session[:result] = result.map{ |i| i.keys[0] }
+      render :index
+    end
   end
 
   def privacy

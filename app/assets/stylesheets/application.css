@@ -115,3 +115,21 @@ a.list-group-item {
   font-size: 3em;
   margin: 2em;
 }
+
+#english-street {
+  font-size: 5em;
+  margin: auto;
+  text-align: center;
+}
+
+#chinese-street {
+  font-size: 20em;
+  margin: auto;
+  text-align: center;
+}
+
+#display {
+  font-size: 3em;
+  margin: auto;
+  text-align: center;
+}
