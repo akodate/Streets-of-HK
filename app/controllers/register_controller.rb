@@ -22,6 +22,7 @@ class RegisterController < ApplicationController
       # return if log_user_in( UserAuthenticator.new(session,flash).authenticate_user(user_params) )
     end
     # (redirect_to root_url and return) if flash.empty?
+    render :new
   end
 
   def confirm

@@ -1,8 +1,12 @@
-= stylesheet_link_tag "application", media: "all"
+doctype html
+html
+  head
+    title Streets of HK
+    = stylesheet_link_tag "application", media: "all"
 
-body style="background: none"
-  main.container role="main"
-    p#english-street = session[:result].first.keys[0]
-    p#chinese-street = session[:result].first.values[0]
-    div#display
-      a href="/" BACK TO STREETS OF HK
+  body style="background: none"
+    main.container role="main"
+      p#english-street = session[:result].first.keys[0]
+      p#chinese-street = session[:result].first.values[0]
+      div#display
+        a href="/" BACK TO STREETS OF HK
