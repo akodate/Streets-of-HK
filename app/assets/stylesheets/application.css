@@ -64,7 +64,16 @@ a.list-group-item {
   background: rgba(0, 0, 0, .5);
   min-width: 36em;
   font: 1.5em Arial, Helvetica, sans-serif;
+  font-style: bold;
+}
+
+.row p {
+  color: rgba(220, 220, 220, 1);
+  background: rgba(0, 0, 0, .5);
+  font: 1em Arial, Helvetica, sans-serif;
   font-style: italic;
+  padding: 0.5em;
+  border-radius: .5em;
 }
 
 #user-email, #user-password {
@@ -100,4 +109,9 @@ a.list-group-item {
 
 .logout-link {
   margin-top: 8px;
+}
+
+#privacy, #terms {
+  font-size: 3em;
+  margin: 2em;
 }

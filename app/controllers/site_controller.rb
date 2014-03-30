@@ -9,19 +9,21 @@ class SiteController < ApplicationController
 
   def search
     if params[:term]
-      result = StreetData.look_up(params[:term])
+      @result = StreetData.look_up(params[:term])
     else
-      result = StreetData.look_up(params[:search][:term])
+      @result = StreetData.look_up(params[:search][:term])
     end
-    puts result.map{ |i| i.keys }
-    session[:result] = result.map{ |i| i.keys[0] }
-    redirect_to root_url
+
+    session[:result] = @result.map{ |i| i.keys[0] }
+    render :index
   end
 
   def privacy
+    render :privacy
   end
 
   def terms
+    render :terms
   end
 
 end

@@ -6,7 +6,7 @@ main.container role="main"
         fieldset
           .form-group
             = f.label :term, class: "sr-only"
-            = f.text_field :term, id: "search", placeholder: "What street?"
+            = f.text_field :term, id: "search", placeholder: "What street?", autofocus: 'autofocus'
       div.list-group
         = render partial: "res", collection: session[:result]
 
