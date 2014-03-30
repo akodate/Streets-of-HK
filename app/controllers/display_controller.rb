@@ -5,4 +5,8 @@ class DisplayController < ApplicationController
     session[:result] = []
   end
 
+  def error
+    render :layout => false
+  end
+
 end

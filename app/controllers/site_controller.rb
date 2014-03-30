@@ -17,6 +17,8 @@ class SiteController < ApplicationController
     if result.size == 1
       session[:result] = result
       redirect_to display_url
+    elsif result.size == 0
+      redirect_to error_url
     else
       session[:result] = result.map{ |i| i.keys[0] }
       render :index

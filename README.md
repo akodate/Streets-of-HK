@@ -11,6 +11,7 @@ TODO:
 - Move flashes to bottom of screen
 - ~~Clean up privacy and terms pages~~
 - Red flashes for negative notifications
+- E-mail verification
 - Deploy application
 - Verify mobile functionality
 - Enable automatic cleaning of unconfirmed, expired users
@@ -23,5 +24,4 @@ TODO:
 QUESTIONS:
 - What localization projects can I work on?
 - How to ensure robust error handling in production?
-- How exactly does params work? Where does it come from? How does it persist after the confirmation e-mail?
 - How to make a generated application properly?
