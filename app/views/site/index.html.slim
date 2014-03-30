@@ -1,8 +1,14 @@
 main.container role="main"
   .row
     .col-md-4.col-md-offset-2
-      form#login-form accept-charset="UTF-8" action="#" method="post"
+      / form#login-form accept-charset="UTF-8" action="#" method="post"
+      = form_for :search, url: search_url, html: { id: "login-form", autocomplete: 'off' } do |f|
         fieldset
           .form-group
-            label.sr-only for="search"  Street search
-            input#search name="search" placeholder="What street?" type="text"
+            = f.label :term, class: "sr-only"
+            = f.text_field :term, id: "search", placeholder: "What street?"
+      div.list-group
+        = render partial: "res", collection: session[:result]
+
+            / label.sr-only for="search"  Street search
+            / input#search name="search" placeholder="What street?" type="text"

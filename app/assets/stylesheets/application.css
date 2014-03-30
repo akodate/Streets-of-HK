@@ -59,6 +59,14 @@ legend {
   font: 1.5em 'Hammersmith One', Arial, Helvetica, sans-serif;
 }
 
+a.list-group-item {
+  color: rgba(140, 140, 140, 1);
+  background: rgba(0, 0, 0, .5);
+  min-width: 36em;
+  font: 1.5em Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
 #user-email, #user-password {
   min-height: 2em;
   min-width: 20em;

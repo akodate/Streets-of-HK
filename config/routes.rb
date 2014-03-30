@@ -2,6 +2,9 @@ StreetsOfHk::Application.routes.draw do
 
   root 'site#index'
 
+  get 'search' => 'site#search'
+  post 'search' => 'site#search'
+
   get 'register' => 'register#new'
   post 'register' => 'register#create'
 
