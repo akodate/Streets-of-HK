@@ -26,12 +26,8 @@ class User
   end
 
   def self.find_by_code code
-    if user = User.find_by({:code => code, :expires_at => {"$gte" => Time.now.gmtime}})
-      user.clear_expiration
-    else
-      User.find_by({:code => code}).destroy
-    end
-    user
+    User.find_by({:code => code, :expires_at => {"$gte" => Time.now.gmtime}})
+    # User.find_by({:code => code}).destroy
   end
 
   def clear_expiration

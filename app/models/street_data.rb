@@ -11,7 +11,7 @@ class StreetData
     StreetData.first.street_data.each do |obj|
       result << obj if reg.match(obj.keys[0])
       puts obj.keys[0]
-      break if result.size >= 10
+      break if result.size >= 8
     end
     return result
   end
