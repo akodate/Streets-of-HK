@@ -1,6 +1,6 @@
 class RegisterController < ApplicationController
 
-  NO_FORM = "Please fill out all fields"
+  NO_FORM = "WE REQUIRE MORE FORM FIELDS"
   NO_MATCH = "Passwords do not match"
   USER_EXISTS = "That e-mail is already taken. Please choose another one"
   REGISTERED = "You're now registered and logged in!"

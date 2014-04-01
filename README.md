@@ -7,6 +7,9 @@ TODO:
 - ~~Add "logged in as" to header navbar~~
 - ~~Import streets data file~~
 - ~~Get search working~~
+- Rename routes to proper REST names
+- Refactor
+- zxcvbn.js
 - Add login flash
 - Move flashes to bottom of screen
 - ~~Clean up privacy and terms pages~~

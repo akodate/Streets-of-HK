@@ -7,6 +7,7 @@ StreetsOfHk::Application.routes.draw do
 
   get 'display' => 'display#new'
   get 'error' => 'display#error', as: :error
+  get 'map' => 'display#map', as: :map
 
   get 'register' => 'register#new'
   post 'register' => 'register#create'
