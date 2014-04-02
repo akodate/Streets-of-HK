@@ -44,11 +44,6 @@ legend {
   margin: 10px 0px;
 }
 
-#login-form {
-  min-width: 54em;
-  margin-top: 6em;
-}
-
 .navbar-brand {
   padding-top: .3em;
   font: 2em 'Hammersmith One', Arial, Helvetica, sans-serif;
@@ -74,6 +69,47 @@ a.list-group-item {
   font-style: italic;
   padding: 0.5em;
   border-radius: 0.5em;
+}
+
+.crack-div {
+  font-size: 1.2em;
+  margin-top: -10px;
+}
+
+.match-div {
+  display: inline;
+  font-size: 1em;
+  margin-top: 20px;
+  margin-left: 1em;
+  min-height: 1.2em;
+  padding: .5em;
+  border-radius: .5em;
+  background: rgba(0, 0, 0, .8);
+  color: red;
+}
+
+.match-div.pmatch {
+  font-weight: bold;
+  color: green;
+}
+
+.register-button {
+  display: inline;
+}
+
+.noty_text {
+  font-size : 18px;
+  font-weight: normal;
+}
+
+.logout-link {
+  margin-top: 8px;
+}
+
+#privacy, #terms {
+  font-size: 3em;
+  margin: 2em;
+  background: rgba(0, 0, 0, .8);
 }
 
 #pass-div {
@@ -111,21 +147,6 @@ a.list-group-item {
   font-style: italic;
 }
 
-.noty_text {
-  font-size : 18px;
-  font-weight: normal;
-}
-
-.logout-link {
-  margin-top: 8px;
-}
-
-#privacy, #terms {
-  font-size: 3em;
-  margin: 2em;
-  background: rgba(0, 0, 0, .8);
-}
-
 #english-street {
   font-size: 5em;
   margin: auto;
@@ -153,28 +174,15 @@ a.list-group-item {
   min-height: 2.2em;
 }
 
-.crack-div {
-  font-size: 1.2em;
-  margin-top: -10px;
+#login-form {
+  min-width: 54em;
+  margin-top: 6em;
 }
 
-.match-div {
-  display: inline;
-  font-size: 1em;
-  margin-top: 20px;
-  margin-left: 1em;
-  min-height: 1.2em;
-  padding: .5em;
-  border-radius: .5em;
-  background: rgba(0, 0, 0, .8);
-  color: red;
+#error-page {
+  background: black
 }
 
-.match-div.pmatch {
-  font-weight: bold;
-  color: green;
-}
-
-.register-button {
-  display: inline;
+#card-page {
+  background: none
 }

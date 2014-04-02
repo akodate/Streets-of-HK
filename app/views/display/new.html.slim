@@ -4,7 +4,7 @@ html
     title Streets of HK
     = stylesheet_link_tag "application", media: "all"
 
-  body style="background: none"
+  body#card-page
     main.container role="main"
       p#english-street = session[:result].first.keys[0]
       p#chinese-street = session[:result].first.values[0]
