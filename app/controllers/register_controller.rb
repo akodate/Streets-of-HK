@@ -19,7 +19,6 @@ class RegisterController < ApplicationController
       flash.now[:alert] = USER_EXISTS
     else
       RegistrationHandler.new(flash).new_user(params)
-      # return if log_user_in( UserAuthenticator.new(session,flash).authenticate_user(user_params) )
     end
     # (redirect_to root_url and return) if flash.empty?
     render :new

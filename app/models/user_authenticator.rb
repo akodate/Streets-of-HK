@@ -8,12 +8,8 @@ class UserAuthenticator
   end
 
   def authenticate_user(params)
-    #email and password
-
     @flash.now[:alert] = AUTH_FAILED unless @user = User.authenticate(params[:email], params[:password])
     @user
-
   end
-
 
 end

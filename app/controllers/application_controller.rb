@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   before_filter :make_action_mailer_user_request_host_and_protocol
 
+  LOGIN_NOTICE = "You've successfully logged in."
+  LOGOUT_NOTICE = "You've successfully logged out."
+
   def is_authenticated?
-    #check session hash for a :user_id (true/false)
-    # not session[:user_id].nil?
-    # redirect_to login_url if session[:user_id].nil?
     redirect_to login_url unless current_user
   end
 
@@ -19,13 +19,13 @@ class ApplicationController < ActionController::Base
   def log_user_in(user, notice = nil)
     if user
       session[:user_id] = user.id
-      redirect_to root_url, notice: notice
+      redirect_to root_url, notice: LOGIN_NOTICE
     end
   end
 
   def log_user_out
     session[:user_id] = nil
-    redirect_to login_url, notice: "You've successfully logged out."
+    redirect_to login_url, notice: LOGOUT_NOTICE
   end
 
   private
