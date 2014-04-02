@@ -73,7 +73,17 @@ a.list-group-item {
   font: 1em Arial, Helvetica, sans-serif;
   font-style: italic;
   padding: 0.5em;
-  border-radius: .5em;
+  border-radius: 0.5em;
+}
+
+#pass-div {
+  margin-top: .5em;
+  padding: 1em;
+  color: rgba(220, 220, 220, 1);
+  background: rgba(0, 0, 0, .5);
+  font: 1em Arial, Helvetica, sans-serif;
+  font-style: italic;
+  border-radius: 0.5em;
 }
 
 #user-email, #user-password {
@@ -92,7 +102,6 @@ a.list-group-item {
   min-width: 40em;
   margin-top: 3em;
   padding: 1em 5em;
-
 }
 
 #search {
@@ -133,4 +142,39 @@ a.list-group-item {
   font-size: 3em;
   margin: auto;
   text-align: center;
+}
+
+#pw-quality {
+  font-size: 1.1em;
+}
+
+#pw-meter {
+  margin-top: 0.5em;
+  min-height: 2.2em;
+}
+
+.crack-div {
+  font-size: 1.2em;
+  margin-top: -10px;
+}
+
+.match-div {
+  display: inline;
+  font-size: 1em;
+  margin-top: 20px;
+  margin-left: 1em;
+  min-height: 1.2em;
+  padding: .5em;
+  border-radius: .5em;
+  background: rgba(0, 0, 0, .8);
+  color: red;
+}
+
+.match-div.pmatch {
+  font-weight: bold;
+  color: green;
+}
+
+.register-button {
+  display: inline;
 }

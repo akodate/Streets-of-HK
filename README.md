@@ -17,5 +17,6 @@ TODO:
 QUESTIONS:
 - What localization projects can I work on?
 - Why can't I change the noty flash position?
+- Why don't coffeescript work?
 - How to ensure robust error handling in production?
 - How to make a generated application properly?

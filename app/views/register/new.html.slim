@@ -8,11 +8,22 @@ main.container.main role="main"
           .form-group
             = f.label :email, class: "sr-only"
             = f.text_field :email, class: "form-control", placeholder: "Email address", autofocus: "autofocus"
+
           .form-group
             = f.label :password, class: "sr-only"
-            = f.password_field :password, class: "form-control", placeholder: "Password"
+            = f.password_field :password, class: "form-control showable-password", placeholder: "Password"
           .form-group
-            = f.label :confirm_password, class: "sr-only"
-            = f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password"
-          .form-group
-            = f.submit "Register", class: "btn btn-success"
+            = f.label :password_confirmation, class: "sr-only"
+            = f.password_field :password_confirmation, class: "form-control showable-password", placeholder: "Type it again"
+          .form-group.register-button
+            => f.submit "Register", class: "btn btn-success"
+          #match-div.match-div
+          #pass-div
+            #pw-meter.strength-meter.progress.progress-striped
+              #strength-meter.meter.progress-bar role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"
+            .crack-div
+              strong> Time to crack:
+              span#time-to-crack instant
+            / p#pw-quality Password too weak!
+
+script src="/assets/vendor/zxcvbn-async.js"
